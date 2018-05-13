@@ -1,18 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <TextView
+           android:id="@+id/tituloGPS"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:text="GPS LOCATION"
+           android:textSize="20sp"/>
+       <Button
+           android:id="@+id/locationControllerGPS"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_below="@+id/tituloGPS"
+           android:text="@string/resume"
+           android:onClick="toggleGPSUpdate"/>
+       <TextView
+           android:id="@+id/longitudeTextGPS"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/locationControllerGPS"
+           android:text="longitude"
+           android:textSize="20sp"/>
+       <TextView
+           android:id="@+id/longitudeValueGPS"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/locationControllerGPS"
+           android:layout_toRightOf="@+id/longitudeTextGPS"
+           android:paddingLeft="20px"
+           android:text="0.0000"
+           android:textSize="20sp"/>
 
-</android.support.constraint.ConstraintLayout>
+       <TextView
+           android:id="@+id/latitudeTextGPS"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/longitudeTextGPS"
+           android:text="latitude"
+           android:textSize="20sp"/>
+       <TextView
+           android:id="@+id/latitudeValueGPS"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/longitudeValueGPS"
+           android:layout_toRightOf="@+id/longitudeTextGPS"
+           android:paddingLeft="20px"
+           android:text="0.0000"
+           android:textSize="20sp"/>
+
+       <TextView
+           android:id="@+id/separador1"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_below="@+id/latitudeValueGPS"
+           android:layout_marginTop="5dp"
+           android:layout_marginBottom="5dp"
+           android:background="@color/colorPrimaryDark"/>
+
+       <TextView
+           android:id="@+id/tittleTextNetWork"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_below="@+id/separador1"
+           android:text="NETWORK LOCATION"
+           android:textSize="20sp"/>
+       <Button
+           android:id="@+id/locationControllerNetwork"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:text="@string/resume"
+           android:layout_below="@id/tittleTextNetWork"
+           android:onClick="toggleNetworkUpdates"/>
+       <TextView
+           android:id="@+id/longitudeTextNetwork"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/locationControllerNetwork"
+           android:text="longitude"
+           android:textSize="20sp"/>
+       <TextView
+           android:id="@+id/longitudeValueNetwork"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/locationControllerNetwork"
+           android:layout_toRightOf="@+id/longitudeTextNetwork"
+           android:paddingLeft="20px"
+           android:text="0.0000"
+           android:textSize="20sp"/>
+
+       <TextView
+           android:id="@+id/latitudeTextNetwork"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/longitudeValueNetwork"
+           android:text="latitude"
+           android:textSize="20sp"/>
+       <TextView
+           android:id="@+id/latitudeValueNetwork"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/longitudeValueNetwork"
+           android:layout_toRightOf="@+id/longitudeTextNetwork"
+           android:paddingLeft="20px"
+           android:text="0.0000"
+           android:textSize="20sp"/>
+
+       <TextView
+           android:id="@+id/separador2"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_below="@+id/latitudeValueNetwork"
+           android:layout_marginTop="5dp"
+           android:layout_marginBottom="5dp"
+           android:background="@color/colorPrimaryDark"/>
+       <TextView
+           android:id="@+id/tittleTextBest"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_below="@+id/separador2"
+           android:text="BEST LOCATION"
+           android:textSize="20sp"/>
+       <Button
+           android:id="@+id/locationControllerBest"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:text="@string/resume"
+           android:layout_below="@id/tittleTextBest"
+           android:onClick="toggleBestUpdates"/>
+       <TextView
+           android:id="@+id/longitudeTextBest"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/locationControllerBest"
+           android:text="longitude"
+           android:textSize="20sp"/>
+       <TextView
+           android:id="@+id/longitudeValueBest"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/locationControllerBest"
+           android:layout_toRightOf="@+id/longitudeTextBest"
+           android:paddingLeft="20px"
+           android:text="0.0000"
+           android:textSize="20sp"/>
+
+       <TextView
+           android:id="@+id/latitudeTextBest"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/longitudeValueBest"
+           android:text="latitude"
+           android:textSize="20sp"/>
+       <TextView
+           android:id="@+id/latitudeValueBest"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/longitudeValueBest"
+           android:layout_toRightOf="@+id/longitudeTextBest"
+           android:paddingLeft="20px"
+           android:text="0.0000"
+           android:textSize="20sp"/>
+       <TextView
+           android:id="@+id/separador3"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_below="@+id/latitudeValueBest"
+           android:layout_marginTop="5dp"
+           android:layout_marginBottom="5dp"
+           android:background="@color/colorPrimaryDark"/>
+       <TextView
+           android:id="@+id/addressText"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/separador3"
+           android:layout_centerHorizontal="true"
+           android:text="Address"
+           android:textSize="20sp"/>
+
+   </RelativeLayout>
+
+</ScrollView>

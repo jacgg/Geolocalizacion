@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Geolocalizacion</string>
+
+
+    <string name="resume">quesera</string>
+    <string name="pause">pasua</string>
 </resources>
